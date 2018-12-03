@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var gameBackground: UIImageView!
     
     @IBOutlet weak var treeScenery: UIImageView!
+    var dynamicAnimator: UIDynamicAnimator!
 
 
     override func viewDidLoad() {
@@ -21,11 +22,13 @@ class ViewController: UIViewController {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         buildBackground()
-        createObstacles() 
+        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+
+        createObstacles()
+        
         
     }
     
-    // example
     func createObstacles() {
         
         let randomInt = arc4random_uniform(10) + 1
@@ -33,9 +36,21 @@ class ViewController: UIViewController {
         
         let crowObstacle = UIImageView(image:nil)
         crowObstacle.image = UIImage(named:"bird\(randomInt).png")
+        crowObstacle.frame = CGRect(x:0, y:0, width: 100, height: 100)
+        crowObstacle.center.x = UIScreen.main.bounds.maxX - 150
+        crowObstacle.center.y = 100
         
-        crowObstacle.frame = CGRect(x:100, y: 100, width: 30, height: 50)
+        let dynamics = UIDynamicItemBehavior(items: [crowObstacle
+            ])
+        
+        dynamics.addLinearVelocity(CGPoint(x: -200, y: 0), for: crowObstacle)
+        
+        
         self.view.addSubview(crowObstacle)
+        dynamicAnimator.addBehavior(dynamics)
+
+        
+        
         
         
         
