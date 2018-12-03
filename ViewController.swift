@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+    // example
     func createObstacles() {
         
         let randomInt = arc4random_uniform(10) + 1
