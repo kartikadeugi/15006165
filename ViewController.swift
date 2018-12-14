@@ -20,10 +20,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        
+        // Initialising the dynamic animator
+        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+        
         UIDevice.current.setValue(value, forKey: "orientation")
         buildBackground()
-        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
-
         createObstacles()
         
         
@@ -40,6 +42,8 @@ class ViewController: UIViewController {
         crowObstacle.center.x = UIScreen.main.bounds.maxX - 150
         crowObstacle.center.y = 100
         
+        
+        // creating dynamic behaviour to crow obstances
         let dynamics = UIDynamicItemBehavior(items: [crowObstacle
             ])
         
@@ -50,11 +54,7 @@ class ViewController: UIViewController {
         dynamicAnimator.addBehavior(dynamics)
 
         
-        
-        
-        
-        
-        
+   
         
     }
     
@@ -67,14 +67,12 @@ class ViewController: UIViewController {
         
         for i in 1...19 {
             roadImages.append(UIImage(named: "road\(i).png")!)
+            
+            if(i<18) {
+              treeImages.append(UIImage(named:"tree\(i).png")!)
+            }
         }
-        
-        for i in 1...17 {
-            treeImages.append(UIImage(named:"tree\(i).png")!)
-        }
-        
-        
-        
+                
         gameBackground.image = UIImage.animatedImage(with: roadImages, duration: 0.5)
         treeScenery.image = UIImage.animatedImage(with: treeImages, duration: 0.5)
 
