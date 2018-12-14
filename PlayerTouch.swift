@@ -8,11 +8,14 @@
 
 import UIKit
 
-class PlayerTouch: UIImageView {
-    let topBorder = UIScreen.main.bounds.maxY - CGFloat(100)
+protocol obstacleProtocol {
+    var x: Double {get}
+}
 
-    let bottomBorder = UIScreen.main.bounds.minY + CGFloat(250)
-    
+class PlayerTouch: UIImageView {
+    let topBorder = UIScreen.main.bounds.minY + CGFloat(150)
+
+    let bottomBorder = UIScreen.main.bounds.maxY - CGFloat(150)
     
     
     
@@ -22,7 +25,7 @@ class PlayerTouch: UIImageView {
             let startLocation = touch.location(in: self.superview)
             
             
-            if(startLocation.y < bottomBorder && startLocation.y < topBorder) {
+            if(startLocation.y < bottomBorder && startLocation.y > topBorder) {
                 self.center.x = startLocation.x
                 self.center.y = startLocation.y
             }
