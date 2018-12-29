@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,19 +13,21 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlightKartika" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mobilecomputing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIImageView">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O13-yY-gWI">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree1" translatesAutoresizingMaskIntoConstraints="NO" id="O13-yY-gWI">
+                                <rect key="frame" x="44" y="0.0" width="808" height="318"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="NKh-Nw-xtV"/>
                                     <constraint firstAttribute="height" constant="300" id="QvV-dW-Dr8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="667" id="and-d0-hxO"/>
                                     <constraint firstAttribute="width" constant="667" id="ifP-hw-YII"/>
                                 </constraints>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane1" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-fw-Qa9" customClass="PlayerTouch" customModule="FlightKartika" customModuleProvider="target">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane1" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-fw-Qa9" customClass="PlayerTouch" customModule="mobilecomputing" customModuleProvider="target">
                                 <rect key="frame" x="121" y="107" width="126" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -33,13 +35,20 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="O13-yY-gWI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-75" id="6Uu-jA-FFw"/>
+                            <constraint firstItem="O13-yY-gWI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7kw-J3-2b7"/>
                             <constraint firstItem="O13-yY-gWI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BQt-hx-Tgh"/>
+                            <constraint firstItem="O13-yY-gWI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Pg5-zp-nPb"/>
+                            <constraint firstItem="O13-yY-gWI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WTV-Ei-iq2"/>
                             <constraint firstItem="O13-yY-gWI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h0R-Fz-Psu"/>
+                            <constraint firstItem="O13-yY-gWI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sEB-H1-0SE"/>
+                            <constraint firstItem="O13-yY-gWI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vNK-LJ-zdV"/>
+                            <constraint firstItem="O13-yY-gWI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y2U-KQ-DJc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="gameBackground" destination="8bC-Xf-vdC" id="9Po-eA-62g"/>
+                        <outlet property="gameBackground" destination="8bC-Xf-vdC" id="7oj-2e-43s"/>
+                        <outlet property="player" destination="UtC-fw-Qa9" id="4oi-Vk-gsC"/>
                         <outlet property="treeScenery" destination="O13-yY-gWI" id="LbN-xJ-SgK"/>
                     </connections>
                 </viewController>
@@ -50,5 +59,6 @@
     </scenes>
     <resources>
         <image name="plane1" width="126" height="74"/>
+        <image name="tree1" width="1024" height="600"/>
     </resources>
 </document>

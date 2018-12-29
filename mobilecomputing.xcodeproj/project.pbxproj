@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		249088D121D65BF60051C9FA /* PlayerTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249088D021D65BF50051C9FA /* PlayerTouch.swift */; };
 		24EC033B21D65195001FF4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC033A21D65195001FF4D4 /* AppDelegate.swift */; };
 		24EC033D21D65195001FF4D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC033C21D65195001FF4D4 /* ViewController.swift */; };
 		24EC034021D65195001FF4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EC033E21D65195001FF4D4 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		249088D021D65BF50051C9FA /* PlayerTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTouch.swift; sourceTree = "<group>"; };
 		24EC033721D65194001FF4D4 /* mobilecomputing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobilecomputing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EC033A21D65195001FF4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24EC033C21D65195001FF4D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		24EC033921D65194001FF4D4 /* mobilecomputing */ = {
 			isa = PBXGroup;
 			children = (
+				249088D021D65BF50051C9FA /* PlayerTouch.swift */,
 				24EC033A21D65195001FF4D4 /* AppDelegate.swift */,
 				24EC033C21D65195001FF4D4 /* ViewController.swift */,
 				24EC033E21D65195001FF4D4 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249088D121D65BF60051C9FA /* PlayerTouch.swift in Sources */,
 				24EC033D21D65195001FF4D4 /* ViewController.swift in Sources */,
 				24EC033B21D65195001FF4D4 /* AppDelegate.swift in Sources */,
 			);
@@ -284,6 +288,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = mobilecomputing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = mobilecomputing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

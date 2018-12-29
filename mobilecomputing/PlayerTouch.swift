@@ -8,14 +8,11 @@
 
 import UIKit
 
-protocol obstacleProtocol {
-    var x: Double {get}
-}
-
 class PlayerTouch: UIImageView {
     let topBorder = UIScreen.main.bounds.minY + CGFloat(150)
 
     let bottomBorder = UIScreen.main.bounds.maxY - CGFloat(150)
+    var getAvatar: avatar?
     
     
     
@@ -28,6 +25,7 @@ class PlayerTouch: UIImageView {
             if(startLocation.y < bottomBorder && startLocation.y > topBorder) {
                 self.center.x = startLocation.x
                 self.center.y = startLocation.y
+                self.getAvatar?.getAvatar()
             }
         }
     }

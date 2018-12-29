@@ -7,15 +7,26 @@
 //
 
 import UIKit
+protocol avatar {
+    func getAvatar()
+}
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
-    @IBOutlet var gameBackground: UIImageView!
+    
+
+    @IBOutlet weak var gameBackground: UIImageView!
     
     @IBOutlet weak var treeScenery: UIImageView!
     var dynamicAnimator: UIDynamicAnimator!
+    var timer: Timer!
+    
+    var birdImages = Array<UIImage>()
+    var obstacles = Array<UIImageView>()
 
 
+    @IBOutlet weak var player: PlayerTouch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,37 +34,40 @@ class ViewController: UIViewController {
         
         // Initialising the dynamic animator
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
-        
+
         UIDevice.current.setValue(value, forKey: "orientation")
         buildBackground()
-        createObstacles()
+
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (T) in self.createObstacles() } )
+
         
         
     }
     
-    func createObstacles() {
+    @objc func createObstacles() {
         
-        let randomInt = arc4random_uniform(10) + 1
+        
+        let randomDouble = Double.random(in: -150...150)
         
         
         let crowObstacle = UIImageView(image:nil)
-        crowObstacle.image = UIImage(named:"bird\(randomInt).png")
-        crowObstacle.frame = CGRect(x:0, y:0, width: 100, height: 100)
+        crowObstacle.image = UIImage.animatedImage(with: birdImages, duration: 0.5)
+        crowObstacle.frame = CGRect(x:0, y:randomDouble, width: 100, height: 100)
         crowObstacle.center.x = UIScreen.main.bounds.maxX - 150
-        crowObstacle.center.y = 100
         
-        
+        obstacles.append(crowObstacle)
         // creating dynamic behaviour to crow obstances
         let dynamics = UIDynamicItemBehavior(items: [crowObstacle
             ])
-        
-        dynamics.addLinearVelocity(CGPoint(x: -200, y: 0), for: crowObstacle)
-        
-        
+    
+        let collisionBehaviour = UICollisionBehavior(items: [crowObstacle,player])
+        let randomSpeed = Double.random(in: -500 ... -200)
+        dynamics.addLinearVelocity(CGPoint(x: randomSpeed, y: 0), for: crowObstacle)
         self.view.addSubview(crowObstacle)
-        dynamicAnimator.addBehavior(dynamics)
-
         
+        dynamicAnimator.addBehavior(dynamics)
+        dynamicAnimator.addBehavior(collisionBehaviour)
+
    
         
     }
@@ -68,6 +82,10 @@ class ViewController: UIViewController {
         for i in 1...19 {
             roadImages.append(UIImage(named: "road\(i).png")!)
             
+            if(i<10) {
+                birdImages.append(UIImage(named:"bird\(i).png")!)
+            }
+            
             if(i<18) {
               treeImages.append(UIImage(named:"tree\(i).png")!)
             }
@@ -77,6 +95,8 @@ class ViewController: UIViewController {
         treeScenery.image = UIImage.animatedImage(with: treeImages, duration: 0.5)
 
     }
+    
+
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
