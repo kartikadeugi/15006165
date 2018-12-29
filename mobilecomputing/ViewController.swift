@@ -17,12 +17,13 @@ class ViewController: UIViewController{
 
     @IBOutlet weak var gameBackground: UIImageView!
     
+    
     @IBOutlet weak var treeScenery: UIImageView!
     var dynamicAnimator: UIDynamicAnimator!
     var timer: Timer!
     
     var birdImages = Array<UIImage>()
-    var obstacles = Array<UIImageView>()
+    let collisionBehaviour = UICollisionBehavior()
 
 
     @IBOutlet weak var player: PlayerTouch!
@@ -47,24 +48,23 @@ class ViewController: UIViewController{
     @objc func createObstacles() {
         
         
-        let randomDouble = Double.random(in: -150...150)
+        let randomPosition = Double.random(in: -150...150)
         
         
         let crowObstacle = UIImageView(image:nil)
         crowObstacle.image = UIImage.animatedImage(with: birdImages, duration: 0.5)
-        crowObstacle.frame = CGRect(x:0, y:randomDouble, width: 100, height: 100)
+        crowObstacle.frame = CGRect(x:0, y:randomPosition, width: 100, height: 100)
         crowObstacle.center.x = UIScreen.main.bounds.maxX - 150
         
-        obstacles.append(crowObstacle)
         // creating dynamic behaviour to crow obstances
         let dynamics = UIDynamicItemBehavior(items: [crowObstacle
             ])
     
-        let collisionBehaviour = UICollisionBehavior(items: [crowObstacle,player])
         let randomSpeed = Double.random(in: -500 ... -200)
         dynamics.addLinearVelocity(CGPoint(x: randomSpeed, y: 0), for: crowObstacle)
-        self.view.addSubview(crowObstacle)
-        
+        gameBackground.addSubview(crowObstacle)
+        collisionBehaviour.addItem(crowObstacle)
+        collisionBehaviour.addItem(player)
         dynamicAnimator.addBehavior(dynamics)
         dynamicAnimator.addBehavior(collisionBehaviour)
 
