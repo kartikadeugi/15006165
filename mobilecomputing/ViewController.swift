@@ -11,6 +11,8 @@ protocol avatarDelegate {
     func getAvatar()
 }
 
+var playerScore = 0
+
 class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDelegate {
  
     
@@ -23,13 +25,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     var coinImages = Array<UIImage>()
     
     
-    var gameOver = false
     var obstacleTimer: Timer!
     var coinTimer: Timer!
-    var playerScore = 0
     
     var countTimer: Timer!
-    var countDownTotal = 60
+    var countDownTotal = 10
     
     @IBOutlet weak var player: PlayerTouch!
     
@@ -38,7 +38,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
    
     func startTimer() {
         obstacleTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (T) in
-            self.playerScore = self.playerScore + 2
+            playerScore = playerScore + 2
             self.createObstacles()
             
         } )
@@ -67,14 +67,19 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         if(countDownTotal != 0) {
             countDownTotal = countDownTotal - 1
         } else {
-            gameOver = true
             countTimer.invalidate()
             obstacleTimer.invalidate()
             coinTimer.invalidate()
+            gameOverScreen()
         }
     }
     
     
+    func gameOverScreen() {
+        let gameScene = UIStoryboard(name: "GameOver", bundle:nil).instantiateViewController(withIdentifier: "GameOverScreen") as UIViewController
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.window?.rootViewController = gameScene
+    }
     func getAvatar() {
         collisionBehaviour.removeAllBoundaries()
 
@@ -129,7 +134,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
             if(self.player.frame.contains(createCoins.frame)) {
                 createCoins.removeFromSuperview()
                 self.dynamicAnimator.removeBehavior(coinCollision)
-                self.playerScore = self.playerScore + 1
+                playerScore = playerScore + 1
             }
 
         }
