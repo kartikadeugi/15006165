@@ -10,6 +10,7 @@
 		2440033B21D831C60081FF79 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2440033A21D831C60081FF79 /* GameOver.storyboard */; };
 		2440033F21D836FC0081FF79 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440033E21D836FC0081FF79 /* GameOverViewController.swift */; };
 		249088D121D65BF60051C9FA /* PlayerTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249088D021D65BF50051C9FA /* PlayerTouch.swift */; };
+		24E718A821D9A8AC009CF829 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E718A721D9A8AC009CF829 /* StartViewController.swift */; };
 		24EC033B21D65195001FF4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC033A21D65195001FF4D4 /* AppDelegate.swift */; };
 		24EC033D21D65195001FF4D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC033C21D65195001FF4D4 /* ViewController.swift */; };
 		24EC034021D65195001FF4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EC033E21D65195001FF4D4 /* Main.storyboard */; };
@@ -21,7 +22,8 @@
 		2440033A21D831C60081FF79 /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
 		2440033E21D836FC0081FF79 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		249088D021D65BF50051C9FA /* PlayerTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTouch.swift; sourceTree = "<group>"; };
-		24EC033721D65194001FF4D4 /* mobilecomputing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobilecomputing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E718A721D9A8AC009CF829 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		24EC033721D65194001FF4D4 /* Helicopter Adventures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Helicopter Adventures.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EC033A21D65195001FF4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24EC033C21D65195001FF4D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		24EC033F21D65195001FF4D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +54,7 @@
 		24EC033821D65194001FF4D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24EC033721D65194001FF4D4 /* mobilecomputing.app */,
+				24EC033721D65194001FF4D4 /* Helicopter Adventures.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +71,7 @@
 				24EC034321D651AB001FF4D4 /* LaunchScreen.storyboard */,
 				24EC034621D651AB001FF4D4 /* Info.plist */,
 				2440033E21D836FC0081FF79 /* GameOverViewController.swift */,
+				24E718A721D9A8AC009CF829 /* StartViewController.swift */,
 			);
 			path = mobilecomputing;
 			sourceTree = "<group>";
@@ -76,9 +79,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		24EC033621D65194001FF4D4 /* mobilecomputing */ = {
+		24EC033621D65194001FF4D4 /* Helicopter Adventures */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24EC034921D651AB001FF4D4 /* Build configuration list for PBXNativeTarget "mobilecomputing" */;
+			buildConfigurationList = 24EC034921D651AB001FF4D4 /* Build configuration list for PBXNativeTarget "Helicopter Adventures" */;
 			buildPhases = (
 				24EC033321D65194001FF4D4 /* Sources */,
 				24EC033421D65194001FF4D4 /* Frameworks */,
@@ -88,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = mobilecomputing;
+			name = "Helicopter Adventures";
 			productName = mobilecomputing;
-			productReference = 24EC033721D65194001FF4D4 /* mobilecomputing.app */;
+			productReference = 24EC033721D65194001FF4D4 /* Helicopter Adventures.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 24EC033221D65194001FF4D4 /* Build configuration list for PBXProject "mobilecomputing" */;
+			buildConfigurationList = 24EC033221D65194001FF4D4 /* Build configuration list for PBXProject "Helicopter Adventures" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24EC033621D65194001FF4D4 /* mobilecomputing */,
+				24EC033621D65194001FF4D4 /* Helicopter Adventures */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E718A821D9A8AC009CF829 /* StartViewController.swift in Sources */,
 				2440033F21D836FC0081FF79 /* GameOverViewController.swift in Sources */,
 				249088D121D65BF60051C9FA /* PlayerTouch.swift in Sources */,
 				24EC033D21D65195001FF4D4 /* ViewController.swift in Sources */,
@@ -229,6 +233,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Helicopter Adventures";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -283,6 +288,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Helicopter Adventures";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -331,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24EC033221D65194001FF4D4 /* Build configuration list for PBXProject "mobilecomputing" */ = {
+		24EC033221D65194001FF4D4 /* Build configuration list for PBXProject "Helicopter Adventures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24EC034721D651AB001FF4D4 /* Debug */,
@@ -340,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24EC034921D651AB001FF4D4 /* Build configuration list for PBXNativeTarget "mobilecomputing" */ = {
+		24EC034921D651AB001FF4D4 /* Build configuration list for PBXNativeTarget "Helicopter Adventures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24EC034A21D651AB001FF4D4 /* Debug */,
