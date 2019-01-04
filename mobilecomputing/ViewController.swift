@@ -30,14 +30,17 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     
     var birdImages = Array<UIImage>()
     var coinImages = Array<UIImage>()
+    var hitEffect = Array<UIImage>()
     
     var audioPlayer = AVAudioPlayer()
 
     var obstacleTimer: Timer!
     var coinTimer: Timer!
-    
     var countTimer: Timer!
-    var countDownTotal = 60
+    
+    var countDownTotal = 20
+    
+    var playerHitEffect = UIImageView()
     
     @IBOutlet weak var player: PlayerTouch!
     
@@ -64,16 +67,22 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     // In order for this method to work, it must conform with the UICollisionDelegate protocol.
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
         behavior.removeItem(item)
-        playerScore = playerScore - 2
+        playerScore = playerScore - 4
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         wobble()
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundEffect)
             audioPlayer.play()
         } catch {}
+        
     }
     
     func wobble() {
+        getAvatar()
+        playerHitEffect.image = UIImage.animatedImage(with: hitEffect, duration: 0.5)
+        playerHitEffect.frame = CGRect(x: player.center.x, y: player.center.y, width: player.bounds.width, height: player.bounds.height)
+        view.addSubview(playerHitEffect)
+        
         let midX = self.view.center.x
         let midY = self.view.center.y
         
@@ -84,6 +93,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         animation.fromValue = CGPoint(x: midX - 10, y: midY)
         animation.toValue = CGPoint(x: midX + 10, y: midY)
         view.layer.add(animation, forKey: "position")
+        
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false, block: { (_) in
+            self.playerHitEffect.removeFromSuperview()
+        } )
+
     }
     
     @objc func updateTimer() {
@@ -218,6 +232,10 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
             
             if(i<7) {
                 coinImages.append(UIImage(named:"coin\(i).png")!)
+            }
+            
+            if(i<16) {
+                hitEffect.append(UIImage(named:"tile\(i).png")!)
             }
             
             if(i<18) {

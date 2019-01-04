@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
+
+var backgroundAudio = AVAudioPlayer()
 
 class StartViewController: UIViewController {
 
@@ -20,9 +23,13 @@ class StartViewController: UIViewController {
     @IBOutlet weak var crow: UIImageView!
     
     var crowImages = Array<UIImage>()
+    let backgroundMusic = URL(fileURLWithPath: Bundle.main.path(forResource: "music", ofType: "mp3")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // stop the playing the background music when game is replayed
+
         background.image = UIImage(named:"startBackground.png")
 
         // Do any additional setup after loading the view.
@@ -30,16 +37,14 @@ class StartViewController: UIViewController {
             crowImages.append(UIImage(named: "bird\(i).png")!)
         }
         
+        do {
+            backgroundAudio = try AVAudioPlayer(contentsOf: backgroundMusic)
+            backgroundAudio.play()
+        } catch {}
+        
         crow.image = UIImage.animatedImage(with: crowImages, duration: 0.5)
         animateTheCrow(crow: crow)
-//        UIView.animate(withDuration: 0.5, delay: 0.0, options: [UIView.AnimationOptions.repeat, .curveLinear], animations: {
-//            self.crow.center.x -= 150
-//
-//            if(self.crow.center.x < UIScreen.main.bounds.minX) {
-//                self.crow.center.x = UIScreen.main.bounds.maxX - 150
-//            }
-//        })
-        
+
         
         if UserDefaults.standard.integer(forKey: "score") == 0 {
             defaults.set(0, forKey: "score")

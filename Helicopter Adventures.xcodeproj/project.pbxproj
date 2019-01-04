@@ -11,6 +11,8 @@
 		2440033F21D836FC0081FF79 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440033E21D836FC0081FF79 /* GameOverViewController.swift */; };
 		2456B1BE21DEDCC600E62345 /* crow_caw.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2456B1BD21DEDCC400E62345 /* crow_caw.wav */; };
 		249088D121D65BF60051C9FA /* PlayerTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249088D021D65BF50051C9FA /* PlayerTouch.swift */; };
+		249FA79021DFDA7A00C49788 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 249FA78F21DFDA7A00C49788 /* music.mp3 */; };
+		249FA79221DFDEB700C49788 /* spark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 249FA79121DFDEB700C49788 /* spark.gif */; };
 		24E718A821D9A8AC009CF829 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E718A721D9A8AC009CF829 /* StartViewController.swift */; };
 		24EC033B21D65195001FF4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC033A21D65195001FF4D4 /* AppDelegate.swift */; };
 		24EC033D21D65195001FF4D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC033C21D65195001FF4D4 /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 		2440033E21D836FC0081FF79 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		2456B1BD21DEDCC400E62345 /* crow_caw.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crow_caw.wav; sourceTree = "<group>"; };
 		249088D021D65BF50051C9FA /* PlayerTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTouch.swift; sourceTree = "<group>"; };
+		249FA78F21DFDA7A00C49788 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		249FA79121DFDEB700C49788 /* spark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = spark.gif; sourceTree = "<group>"; };
 		24E718A721D9A8AC009CF829 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		24EC033721D65194001FF4D4 /* Helicopter Adventures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Helicopter Adventures.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EC033A21D65195001FF4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,10 +68,12 @@
 		24EC033921D65194001FF4D4 /* mobilecomputing */ = {
 			isa = PBXGroup;
 			children = (
+				249FA78F21DFDA7A00C49788 /* music.mp3 */,
 				2440033A21D831C60081FF79 /* GameOver.storyboard */,
 				249088D021D65BF50051C9FA /* PlayerTouch.swift */,
 				24EC033A21D65195001FF4D4 /* AppDelegate.swift */,
 				24EC033C21D65195001FF4D4 /* ViewController.swift */,
+				249FA79121DFDEB700C49788 /* spark.gif */,
 				2456B1BD21DEDCC400E62345 /* crow_caw.wav */,
 				24EC033E21D65195001FF4D4 /* Main.storyboard */,
 				24EC034121D651AB001FF4D4 /* Assets.xcassets */,
@@ -139,8 +145,10 @@
 			files = (
 				2456B1BE21DEDCC600E62345 /* crow_caw.wav in Resources */,
 				2440033B21D831C60081FF79 /* GameOver.storyboard in Resources */,
+				249FA79021DFDA7A00C49788 /* music.mp3 in Resources */,
 				24EC034521D651AB001FF4D4 /* LaunchScreen.storyboard in Resources */,
 				24EC034221D651AB001FF4D4 /* Assets.xcassets in Resources */,
+				249FA79221DFDEB700C49788 /* spark.gif in Resources */,
 				24EC034021D65195001FF4D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

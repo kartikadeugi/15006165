@@ -17,6 +17,7 @@ class GameOverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundAudio.stop()
         gameOverBackground.image = UIImage(named: "gameOverBackground.png")
         
         
