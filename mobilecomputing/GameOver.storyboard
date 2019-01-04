@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Over View Controller-->
+        <scene sceneID="UFf-oF-L54">
+            <objects>
+                <viewController storyboardIdentifier="GameOverScreen" id="ATM-kM-XbW" customClass="GameOverViewController" customModule="Helicopter_Adventures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1rR-Ao-fXj" customClass="UIImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si7-hf-F5g">
+                                <rect key="frame" x="177" y="124" width="238" height="60"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lza-oq-NiZ">
+                                <rect key="frame" x="152" y="212" width="224" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="CgQ-Fi-lnA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="224" id="KvG-c6-w6q"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="88" id="kRy-IB-iiy"/>
+                                    <constraint firstAttribute="width" constant="224" id="x0g-6f-RCw"/>
+                                </constraints>
+                                <state key="normal" image="replay"/>
+                                <connections>
+                                    <segue destination="to7-rk-bAf" kind="show" id="sI4-vN-j7b"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowFly" translatesAutoresizingMaskIntoConstraints="NO" id="ngC-qD-SVR">
+                                <rect key="frame" x="388" y="192" width="160" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="Cmm-9K-MnK"/>
+                                    <constraint firstAttribute="width" constant="160" id="jFC-JM-cb5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="crowPoint" translatesAutoresizingMaskIntoConstraints="NO" id="FUN-Om-zFm">
+                                <rect key="frame" x="46" y="73" width="155" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="164" id="Mfi-la-K4y"/>
+                                    <constraint firstAttribute="height" constant="145" id="Q42-Pb-qog"/>
+                                    <constraint firstAttribute="width" constant="164" id="t0X-dw-oOa"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lza-oq-NiZ" firstAttribute="leading" secondItem="VFB-L7-UTB" secondAttribute="leading" constant="152" id="0Ox-nE-csS"/>
+                            <constraint firstItem="VFB-L7-UTB" firstAttribute="bottom" secondItem="ngC-qD-SVR" secondAttribute="bottom" constant="20" id="2XG-XA-C1F"/>
+                            <constraint firstItem="VFB-L7-UTB" firstAttribute="bottom" secondItem="lza-oq-NiZ" secondAttribute="bottom" constant="20" id="5WB-gC-3hY"/>
+                            <constraint firstItem="Si7-hf-F5g" firstAttribute="centerX" secondItem="VFB-L7-UTB" secondAttribute="centerX" id="KZm-kx-Tfi"/>
+                            <constraint firstItem="VFB-L7-UTB" firstAttribute="trailing" secondItem="ngC-qD-SVR" secondAttribute="trailing" constant="20" id="MSD-hJ-RZa"/>
+                            <constraint firstItem="lza-oq-NiZ" firstAttribute="leading" secondItem="VFB-L7-UTB" secondAttribute="leading" constant="152" id="YGf-vl-jU2"/>
+                            <constraint firstItem="ngC-qD-SVR" firstAttribute="leading" secondItem="lza-oq-NiZ" secondAttribute="trailing" constant="12" id="bRg-sP-zuy"/>
+                            <constraint firstItem="FUN-Om-zFm" firstAttribute="leading" secondItem="VFB-L7-UTB" secondAttribute="leading" constant="46" id="qzn-ei-Mcv"/>
+                            <constraint firstItem="FUN-Om-zFm" firstAttribute="top" secondItem="VFB-L7-UTB" secondAttribute="top" constant="59" id="rmU-9g-kF5"/>
+                            <constraint firstItem="Si7-hf-F5g" firstAttribute="centerY" secondItem="VFB-L7-UTB" secondAttribute="centerY" id="uP7-bp-LVG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VFB-L7-UTB"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameOverBackground" destination="1rR-Ao-fXj" id="0hJ-EP-YxJ"/>
+                        <outlet property="scoreText" destination="Si7-hf-F5g" id="jnr-cL-ZDj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJx-BY-Gzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.98591549295776" y="84.375"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="QAG-dy-E1b">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="StartScreen" storyboardName="Main" id="to7-rk-bAf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AdP-aI-a44" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="47"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="crowFly" width="450" height="332"/>
+        <image name="crowPoint" width="450" height="294"/>
+        <image name="replay" width="185" height="48"/>
+    </resources>
+</document>

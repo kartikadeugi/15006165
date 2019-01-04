@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		2440033A21D831C60081FF79 /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
 		2440033E21D836FC0081FF79 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		2456B1BD21DEDCC400E62345 /* crow_caw.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crow_caw.wav; sourceTree = "<group>"; };
+		2456B1BD21DEDCC400E62345 /* crow_caw.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = crow_caw.wav; path = mobilecomputing/crow_caw.wav; sourceTree = SOURCE_ROOT; };
 		249088D021D65BF50051C9FA /* PlayerTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTouch.swift; sourceTree = "<group>"; };
 		249FA78F21DFDA7A00C49788 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		249FA79121DFDEB700C49788 /* spark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = spark.gif; sourceTree = "<group>"; };
