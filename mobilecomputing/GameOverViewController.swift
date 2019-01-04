@@ -12,11 +12,25 @@ class GameOverViewController: UIViewController {
 
     @IBOutlet weak var gameOverBackground: UIImageView!
     @IBOutlet weak var scoreText: UILabel!
+    let defaults = UserDefaults.standard
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gameOverBackground.image = UIImage(named: "gameOverBackground.png")
-        scoreText.text = "Score: \(playerScore)"
+        
+        
         // Do any additional setup after loading the view.
+        let storedScore = defaults.integer(forKey: "score")
+        
+        if(playerScore > storedScore) {
+            defaults.set(playerScore, forKey: "score")
+            scoreText.text = "🎖️ New High Score: \(playerScore)"
+        } else {
+            scoreText.text = "🏁 Score: \(playerScore)"
+        }
+        
+        playerScore = 0
     }
     
 

@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioToolbox
+
 protocol avatarDelegate {
     func getAvatar()
 }
 
 var playerScore = 0
 
+
+
+
 class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDelegate {
  
-    
+
+    @IBOutlet weak var timeDisplay: UITextView!
     @IBOutlet weak var scoreDisplay: UITextView!
     @IBOutlet weak var gameBackground: UIImageView!
     @IBOutlet weak var treeScenery: UIImageView!
@@ -24,17 +31,19 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     var birdImages = Array<UIImage>()
     var coinImages = Array<UIImage>()
     
-    
+    var audioPlayer = AVAudioPlayer()
+
     var obstacleTimer: Timer!
     var coinTimer: Timer!
     
     var countTimer: Timer!
-    var countDownTotal = 10
+    var countDownTotal = 60
     
     @IBOutlet weak var player: PlayerTouch!
     
     var collisionBehaviour: UICollisionBehavior!
-    
+    let soundEffect = URL(fileURLWithPath: Bundle.main.path(forResource: "crow_caw", ofType: "wav")!)
+
    
     func startTimer() {
         obstacleTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (T) in
@@ -54,15 +63,33 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     // Called when a collision, between a dynamic item and a collision boundary, has begun.
     // In order for this method to work, it must conform with the UICollisionDelegate protocol.
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
+        behavior.removeItem(item)
         playerScore = playerScore - 2
-        print("Collision")
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        wobble()
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundEffect)
+            audioPlayer.play()
+        } catch {}
+    }
+    
+    func wobble() {
+        let midX = self.view.center.x
+        let midY = self.view.center.y
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.06
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = CGPoint(x: midX - 10, y: midY)
+        animation.toValue = CGPoint(x: midX + 10, y: midY)
+        view.layer.add(animation, forKey: "position")
     }
     
     @objc func updateTimer() {
         
-
+        timeDisplay.text = "⌛\(countDownTotal)"
         scoreDisplay.text = "🏆\(playerScore)"
-        print(countDownTotal)
         
         if(countDownTotal != 0) {
             countDownTotal = countDownTotal - 1
@@ -117,7 +144,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         let createCoins = UIImageView(image:nil)
         createCoins.image = UIImage.animatedImage(with: coinImages, duration: 0.5)
         createCoins.frame = CGRect(x:0, y:randomPosition, width: 40, height: 40)
-        createCoins.center.x = UIScreen.main.bounds.maxX - 150
+        createCoins.center.x = UIScreen.main.bounds.maxX 
         createCoins.tag = 1
         let coinDynamics = UIDynamicItemBehavior(items: [createCoins])
         let randomSpeed = Double.random(in: -300 ... -100)
@@ -126,14 +153,15 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         dynamicAnimator.addBehavior(coinDynamics)
         
         let coinCollision = UICollisionBehavior(items: [createCoins])
+        getAvatar()
+
         dynamicAnimator.addBehavior(coinCollision)
         
         coinCollision.action = {
 
-
-            if(self.player.frame.contains(createCoins.frame)) {
-                createCoins.removeFromSuperview()
+            if(self.player.frame.intersects(createCoins.frame)) {
                 self.dynamicAnimator.removeBehavior(coinCollision)
+                createCoins.removeFromSuperview()
                 playerScore = playerScore + 1
             }
 

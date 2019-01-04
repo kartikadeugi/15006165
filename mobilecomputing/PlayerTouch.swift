@@ -9,9 +9,9 @@
 import UIKit
 
 class PlayerTouch: UIImageView {
-    let topBorder = UIScreen.main.bounds.minY + CGFloat(50)
+    let topBorder = UIScreen.main.bounds.minY + CGFloat(30)
 
-    let bottomBorder = UIScreen.main.bounds.maxY - CGFloat(150)
+    let bottomBorder = UIScreen.main.bounds.maxY - CGFloat(120)
     var myDelegate: avatarDelegate?
 
     var startLocation: CGPoint?
@@ -25,10 +25,13 @@ class PlayerTouch: UIImageView {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let currentLocation = touches.first?.location(in: self)
-        let dx = currentLocation!.x - startLocation!.x
-        let dy = currentLocation!.y - startLocation!.y
-        self.center = CGPoint(x: self.center.x+dx, y: self.center.y+dy)
-        self.myDelegate?.getAvatar()
+        let dx = (currentLocation!.x - startLocation!.x) + self.center.x
+        let dy = (currentLocation!.y - startLocation!.y) + self.center.y
+        
+        if(dy < bottomBorder && dy > topBorder) {
+            self.center = CGPoint(x: dx, y: dy)
+            self.myDelegate?.getAvatar()
+        }
 
     }
     
@@ -41,7 +44,7 @@ class PlayerTouch: UIImageView {
 //            let startLocation = touch.location(in: self.superview)
 //
 //
-//            if(startLocation.y < bottomBorder && startLocation.y > topBorder) {
+//            if(startLocation.y > bottomBorder && startLocation.y < topBorder) {
 //                self.center.x = startLocation.x
 //                self.center.y = startLocation.y
 //                self.getAvatar?.getAvatar()
