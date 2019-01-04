@@ -13,10 +13,11 @@ class PlayerTouch: UIImageView {
 
     let bottomBorder = UIScreen.main.bounds.maxY - CGFloat(120)
     var myDelegate: avatarDelegate?
-
+    
     var startLocation: CGPoint?
     
-    
+
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         startLocation = touches.first?.location(in: self)

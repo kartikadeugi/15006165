@@ -31,8 +31,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     var birdImages = Array<UIImage>()
     var coinImages = Array<UIImage>()
     var hitEffect = Array<UIImage>()
-    
     var audioPlayer = AVAudioPlayer()
+
+    var planeImages = Array<UIImage>()
 
     var obstacleTimer: Timer!
     var coinTimer: Timer!
@@ -80,7 +81,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     func wobble() {
         getAvatar()
         playerHitEffect.image = UIImage.animatedImage(with: hitEffect, duration: 0.5)
-        playerHitEffect.frame = CGRect(x: player.center.x, y: player.center.y, width: player.bounds.width, height: player.bounds.height)
+        playerHitEffect.frame = CGRect(x: player.center.x-50, y: player.center.y-50, width: player.bounds.width+50, height: player.bounds.height+50)
         view.addSubview(playerHitEffect)
         
         let midX = self.view.center.x
@@ -133,10 +134,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        
+
+
         // Initialising the dynamic animator
         player.myDelegate = self
-
+        
+        
+        
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         
         collisionBehaviour = UICollisionBehavior()
@@ -144,6 +148,8 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
 
         UIDevice.current.setValue(value, forKey: "orientation")
         buildBackground()
+
+        player.image = UIImage.animatedImage(with: planeImages, duration: 0.5)
         
         startTimer()
         
@@ -236,11 +242,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
             
             if(i<16) {
                 hitEffect.append(UIImage(named:"tile\(i).png")!)
+                planeImages.append(UIImage(named:"plane\(i).png")!)
             }
             
             if(i<18) {
               treeImages.append(UIImage(named:"tree\(i).png")!)
             }
+            
         }
                 
         gameBackground.image = UIImage.animatedImage(with: roadImages, duration: 0.5)
