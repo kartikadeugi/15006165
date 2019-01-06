@@ -43,9 +43,10 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="tree1" translatesAutoresizingMaskIntoConstraints="NO" id="izo-ek-KyN">
-                                <rect key="frame" x="0.0" y="80" width="667" height="235"/>
+                                <rect key="frame" x="0.0" y="70" width="667" height="235"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="izo-ek-KyN" secondAttribute="height" multiplier="71:25" id="h0S-3T-UfO"/>
+                                    <constraint firstAttribute="height" constant="255" id="HYV-hy-InQ"/>
+                                    <constraint firstAttribute="width" constant="667" id="cON-q5-YsM"/>
                                 </constraints>
                             </imageView>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane1" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-fw-Qa9" customClass="PlayerTouch" customModule="Helicopter_Adventures" customModuleProvider="target">
@@ -65,18 +66,22 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="izo-ek-KyN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="L3Q-QC-xZs"/>
+                            <constraint firstItem="izo-ek-KyN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1qz-Vm-Kcv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="izo-ek-KyN" secondAttribute="bottom" constant="70" id="5o4-5d-yjj"/>
+                            <constraint firstItem="izo-ek-KyN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="GbT-2Z-oU5"/>
+                            <constraint firstItem="izo-ek-KyN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="L3Q-QC-xZs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5G9-Ta-mfA" secondAttribute="trailing" constant="128" id="LVW-ds-FMe"/>
                             <constraint firstItem="6J7-gT-1vo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LhD-Dz-hBq"/>
                             <constraint firstItem="TC6-aF-Nx4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MHN-Rd-HbX"/>
-                            <constraint firstItem="izo-ek-KyN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d8E-No-HIy"/>
+                            <constraint firstItem="izo-ek-KyN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d8E-No-HIy"/>
                             <constraint firstItem="Agq-oE-vMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dfs-ap-NOf"/>
                             <constraint firstItem="6J7-gT-1vo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hSu-tg-Hme"/>
                             <constraint firstItem="Agq-oE-vMn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="jCr-R0-2kX"/>
                             <constraint firstItem="TC6-aF-Nx4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lKR-CI-1eT"/>
                             <constraint firstItem="5G9-Ta-mfA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="oeI-9M-NKh"/>
+                            <constraint firstItem="izo-ek-KyN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wUo-SU-8FD"/>
                             <constraint firstItem="5G9-Ta-mfA" firstAttribute="leading" secondItem="Agq-oE-vMn" secondAttribute="trailing" constant="20" id="xJi-v3-KCa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="izo-ek-KyN" secondAttribute="bottom" constant="60" id="z6D-JV-HCx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="izo-ek-KyN" secondAttribute="bottom" constant="70" id="z6D-JV-HCx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -138,20 +143,17 @@
                                 <rect key="frame" x="528" y="0.0" width="139" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipW-3m-MVF">
-                                <rect key="frame" x="256" y="282" width="154" height="54"/>
-                                <color key="backgroundColor" red="1" green="0.42067136140458439" blue="0.38462169099587284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipW-3m-MVF">
+                                <rect key="frame" x="256.5" y="276" width="154" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="0D0-TV-ePg"/>
                                     <constraint firstAttribute="height" constant="54" id="QZO-5d-lgR"/>
                                     <constraint firstAttribute="width" constant="154" id="ZdM-aH-QxF"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="154" id="rY0-er-QUx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="tintColor" red="1" green="0.35610055069319868" blue="0.31848510644826222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Play">
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="play">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="b3w-l1-Z6W"/>
@@ -193,6 +195,7 @@
         <image name="cloud2" width="3480" height="1336"/>
         <image name="crowHighscore" width="448" height="450"/>
         <image name="plane1" width="126" height="74"/>
+        <image name="play" width="120" height="48"/>
         <image name="tree1" width="1024" height="600"/>
     </resources>
 </document>

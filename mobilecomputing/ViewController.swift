@@ -47,7 +47,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     
     var collisionBehaviour: UICollisionBehavior!
     let soundEffect = URL(fileURLWithPath: Bundle.main.path(forResource: "crow_caw", ofType: "wav")!)
-
+    
+    let coinSoundEffect = URL(fileURLWithPath: Bundle.main.path(forResource: "coinsound", ofType: "wav")!)
+    
    
     func startTimer() {
         obstacleTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (T) in
@@ -133,6 +135,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        timeDisplay.isEditable = false
+        scoreDisplay.isEditable = false
+        
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
 
 
@@ -183,6 +188,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
                 self.dynamicAnimator.removeBehavior(coinCollision)
                 createCoins.removeFromSuperview()
                 playerScore = playerScore + 1
+                do {
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: self.coinSoundEffect)
+                    self.audioPlayer.play()
+                } catch {}
+                
             }
 
         }
@@ -209,7 +219,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     
         let randomSpeed = Double.random(in: -500 ... -200)
         crowDynamics.addLinearVelocity(CGPoint(x: randomSpeed, y: 0), for: crowObstacle)
-        crowDynamics.elasticity = 0.5
+        crowDynamics.elasticity = 0.75
 
 
         self.view.addSubview(crowObstacle)
