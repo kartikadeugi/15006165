@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E5N-Pz-VsR">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,43 +15,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Helicopter_Adventures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIImageView">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="cloud2" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-Ta-mfA">
-                                <rect key="frame" x="437" y="37" width="150" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="VZU-iz-TBt"/>
-                                    <constraint firstAttribute="height" constant="100" id="xuG-H2-Y5w"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="🏆 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-gT-1vo">
-                                <rect key="frame" x="564" y="0.0" width="103" height="45"/>
-                                <color key="backgroundColor" red="0.61111443785484498" green="0.58785749286729483" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="jz1-hi-CbJ"/>
-                                    <constraint firstAttribute="height" constant="45" id="lHc-Kj-c4o"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="Agq-oE-vMn">
-                                <rect key="frame" x="64" y="36" width="365" height="101"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="101" id="ttv-OB-qZp"/>
-                                    <constraint firstAttribute="width" constant="224" id="uno-4N-9kz"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="tree1" translatesAutoresizingMaskIntoConstraints="NO" id="izo-ek-KyN">
-                                <rect key="frame" x="0.0" y="70" width="667" height="235"/>
+                                <rect key="frame" x="0.0" y="12" width="736" height="327"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="255" id="HYV-hy-InQ"/>
-                                    <constraint firstAttribute="width" constant="667" id="cON-q5-YsM"/>
+                                    <constraint firstAttribute="width" constant="736" id="9KX-Bo-dRf"/>
+                                    <constraint firstAttribute="height" constant="327" id="alC-AQ-vH3"/>
                                 </constraints>
-                            </imageView>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane1" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-fw-Qa9" customClass="PlayerTouch" customModule="Helicopter_Adventures" customModuleProvider="target">
-                                <rect key="frame" x="80" y="120" width="100" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="⌛ 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TC6-aF-Nx4">
                                 <rect key="frame" x="0.0" y="0.0" width="103" height="45"/>
@@ -63,25 +35,49 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="Agq-oE-vMn">
+                                <rect key="frame" x="64" y="36" width="365" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="ttv-OB-qZp"/>
+                                    <constraint firstAttribute="width" constant="224" id="uno-4N-9kz"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="🏆 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-gT-1vo">
+                                <rect key="frame" x="633" y="0.0" width="103" height="45"/>
+                                <color key="backgroundColor" red="0.61111443785484498" green="0.58785749286729483" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="jz1-hi-CbJ"/>
+                                    <constraint firstAttribute="height" constant="45" id="lHc-Kj-c4o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="cloud2" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-Ta-mfA">
+                                <rect key="frame" x="437" y="37" width="150" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="VZU-iz-TBt"/>
+                                    <constraint firstAttribute="height" constant="100" id="xuG-H2-Y5w"/>
+                                </constraints>
+                            </imageView>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane1" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-fw-Qa9" customClass="PlayerTouch" customModule="Helicopter_Adventures" customModuleProvider="target">
+                                <rect key="frame" x="80" y="120" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="izo-ek-KyN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1qz-Vm-Kcv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="izo-ek-KyN" secondAttribute="bottom" constant="70" id="5o4-5d-yjj"/>
-                            <constraint firstItem="izo-ek-KyN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="GbT-2Z-oU5"/>
-                            <constraint firstItem="izo-ek-KyN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="L3Q-QC-xZs"/>
+                            <constraint firstItem="izo-ek-KyN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="JHc-ox-KGg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5G9-Ta-mfA" secondAttribute="trailing" constant="128" id="LVW-ds-FMe"/>
                             <constraint firstItem="6J7-gT-1vo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LhD-Dz-hBq"/>
                             <constraint firstItem="TC6-aF-Nx4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MHN-Rd-HbX"/>
-                            <constraint firstItem="izo-ek-KyN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d8E-No-HIy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="izo-ek-KyN" secondAttribute="bottom" constant="75" id="RTb-gc-QpT"/>
                             <constraint firstItem="Agq-oE-vMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dfs-ap-NOf"/>
                             <constraint firstItem="6J7-gT-1vo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hSu-tg-Hme"/>
                             <constraint firstItem="Agq-oE-vMn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="jCr-R0-2kX"/>
                             <constraint firstItem="TC6-aF-Nx4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lKR-CI-1eT"/>
                             <constraint firstItem="5G9-Ta-mfA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="oeI-9M-NKh"/>
-                            <constraint firstItem="izo-ek-KyN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wUo-SU-8FD"/>
+                            <constraint firstItem="izo-ek-KyN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wbo-hg-xud"/>
                             <constraint firstItem="5G9-Ta-mfA" firstAttribute="leading" secondItem="Agq-oE-vMn" secondAttribute="trailing" constant="20" id="xJi-v3-KCa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="izo-ek-KyN" secondAttribute="bottom" constant="70" id="z6D-JV-HCx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -95,18 +91,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.107142857142858" y="27.536231884057973"/>
+            <point key="canvasLocation" x="23.64130434782609" y="26.086956521739133"/>
         </scene>
         <!--StartScreen-->
         <scene sceneID="gDs-I4-L3B">
             <objects>
                 <viewController storyboardIdentifier="StartScreen" title="StartScreen" id="E5N-Pz-VsR" customClass="StartViewController" customModule="Helicopter_Adventures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eCh-IT-PA6" customClass="UIImageView">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nps-sQ-8j9">
-                                <rect key="frame" x="435" y="154" width="217" height="166"/>
+                                <rect key="frame" x="504" y="193" width="217" height="166"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eld-Xu-3wR">
                                         <rect key="frame" x="35" y="133" width="162" height="33"/>
@@ -144,7 +140,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipW-3m-MVF">
-                                <rect key="frame" x="256.5" y="276" width="154" height="54"/>
+                                <rect key="frame" x="291" y="315" width="154" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="0D0-TV-ePg"/>
                                     <constraint firstAttribute="height" constant="54" id="QZO-5d-lgR"/>

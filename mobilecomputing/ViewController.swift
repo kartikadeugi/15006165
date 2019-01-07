@@ -69,6 +69,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     // Called when a collision, between a dynamic item and a collision boundary, has begun.
     // In order for this method to work, it must conform with the UICollisionDelegate protocol.
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
+        getAvatar()
         behavior.removeItem(item)
         playerScore = playerScore - 4
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -111,6 +112,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         if(countDownTotal != 0) {
             countDownTotal = countDownTotal - 1
         } else {
+            dynamicAnimator.removeAllBehaviors()
             countTimer.invalidate()
             obstacleTimer.invalidate()
             coinTimer.invalidate()
@@ -134,6 +136,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        playerScore = 0
         // Do any additional setup after loading the view, typically from a nib.
         timeDisplay.isEditable = false
         scoreDisplay.isEditable = false
@@ -165,7 +168,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
    
     func createCoins() {
         
-        let randomPosition = Double.random(in: 0...150)
+        let randomPosition = Double.random(in: 30...150)
         let createCoins = UIImageView(image:nil)
         createCoins.image = UIImage.animatedImage(with: coinImages, duration: 0.5)
         createCoins.frame = CGRect(x:0, y:randomPosition, width: 40, height: 40)
@@ -204,14 +207,14 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
     
     func createObstacles() {
         
-        let randomPosition = Double.random(in: 0...150)
+        let randomPosition = Double.random(in: 30...150)
         
         
         let crowObstacle = UIImageView(image:nil)
         crowObstacle.tag = 0
         crowObstacle.image = UIImage.animatedImage(with: birdImages, duration: 0.5)
         crowObstacle.frame = CGRect(x:0, y:randomPosition, width: 100, height: 100)
-        crowObstacle.center.x = UIScreen.main.bounds.maxX - 150
+        crowObstacle.center.x = UIScreen.main.bounds.maxX
         
         // creating dynamic behaviour to crow obstances
         let crowDynamics = UIDynamicItemBehavior(items: [crowObstacle
@@ -225,10 +228,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         self.view.addSubview(crowObstacle)
         collisionBehaviour.addItem(crowObstacle)
 
-        getAvatar()
 
         dynamicAnimator.addBehavior(crowDynamics)
         dynamicAnimator.addBehavior(collisionBehaviour)
+        getAvatar()
+
 
     }
     
