@@ -79,6 +79,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
             audioPlayer.play()
         } catch {}
         
+        // Readd collision boundaries
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (_) in
+            behavior.addItem(item)
+        } )
+        
     }
     
     func wobble() {
@@ -178,13 +183,15 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
         let randomSpeed = Double.random(in: -300 ... -100)
         coinDynamics.addLinearVelocity(CGPoint(x: randomSpeed, y:0 ),for: createCoins)
         self.view.addSubview(createCoins)
-        dynamicAnimator.addBehavior(coinDynamics)
         
+        dynamicAnimator.addBehavior(coinDynamics)
+
         let coinCollision = UICollisionBehavior(items: [createCoins])
+        coinCollision.collisionMode = UICollisionBehavior.Mode.boundaries
         getAvatar()
 
         dynamicAnimator.addBehavior(coinCollision)
-        
+
         coinCollision.action = {
 
             if(self.player.frame.intersects(createCoins.frame)) {
@@ -226,6 +233,8 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate, avatarDeleg
 
 
         self.view.addSubview(crowObstacle)
+        collisionBehaviour.collisionMode = UICollisionBehavior.Mode.boundaries
+
         collisionBehaviour.addItem(crowObstacle)
 
 
